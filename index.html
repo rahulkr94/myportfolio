@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://use.fontawesome.com/d481e32e31.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Portfo<span>lio.</span></a></div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Teams</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">Rahul Kumar</div>
+                <div class="text-3">And I'm a <span>Web Developer</span></div>
+            </div>
+        </div>
+    </section>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <script src="index.js"></script>
+    <script>
+        (function() {
+        
+            const idleDurationSecs = 5;    // X number of seconds
+            const redirectUrl = '/logout';  // Redirect idle users to this URL
+            let idleTimeout; // variable to hold the timeout, do not modify
+        
+            const resetIdleTimeout = function() {
+        
+                // Clears the existing timeout
+                if(idleTimeout) clearTimeout(idleTimeout);
+        
+                // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+                idleTimeout = setTimeout(() => alert("you have been logout due to inactivity!"), idleDurationSecs * 1000);
+            };
+        
+            // Init on page load
+            resetIdleTimeout();
+        
+            // Reset the idle timeout on any of the events listed below
+            ['click', 'touchstart', 'mousemove'].forEach(evt => 
+                document.addEventListener(evt, resetIdleTimeout, false)
+            );
+        
+        })();
+        </script>
+</body>
+</html>
